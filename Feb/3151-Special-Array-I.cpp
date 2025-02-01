@@ -2,8 +2,14 @@ class Solution {
 public:
     bool isArraySpecial(vector<int>& nums) {
         int n = nums.size();
-        for(int i=1;i<n;++i)
-           if((nums[i]%2)==(nums[i-1]%2))return 0;
+        if(nums.size()==1)return 1;
+        int i=0,j=1;
+        while(j<n)
+        {
+         if((nums[i]%2)==(nums[j]%2))return 0;
+         i++;
+         j++;
+        }
         
 
         return 1;
